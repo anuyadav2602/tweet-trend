@@ -1,5 +1,5 @@
 def registry = 'https://vaslaxy143.jfrog.io/'
-def imageName ='valaxy1111.jfrog.io/valaxy-docker-local/ttrend'
+def imageName ='vaslaxy143.jfrog.io/valaxy-docker-local/ttrend'
 def version   = '2.1.2'
 
 pipeline {
@@ -65,7 +65,7 @@ environment {
         steps {
             script {
                echo '<--------------- Docker Publish Started --------------->'  
-                docker.withRegistry(registry, 'jfrog_cred'){
+                docker.withRegistry(registry, 'jfrogcred'){
                     app.push()
                 }    
                echo '<--------------- Docker Publish Ended --------------->'  
