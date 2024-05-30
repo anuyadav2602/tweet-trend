@@ -1,4 +1,4 @@
-def registry = https://vaslaxy143.jfrog.io///artifactory/valaxy-libs-release/'
+def registry = 'https://vaslaxy143.jfrog.io///artifactory/valaxy-libs-release/'
 pipeline {
     agent {
         node {
