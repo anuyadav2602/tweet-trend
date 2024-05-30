@@ -1,4 +1,4 @@
-def registry = 'https://vaslaxy143.jfrog.io//artifactory/valaxy-libs-release/'
+def registry = https://vaslaxy143.jfrog.io///artifactory/valaxy-libs-release/'
 pipeline {
     agent {
         node {
@@ -28,7 +28,7 @@ environment {
         steps {
             script {
                     echo '<--------------- Jar Publish Started --------------->'
-                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"jfrog-cred"
+                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"jfrog_cred"
                      def properties = "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}";
                      def uploadSpec = """{
                           "files": [
@@ -46,6 +46,7 @@ environment {
                      server.publishBuildInfo(buildInfo)
                      echo '<--------------- Jar Publish Ended --------------->'  
              }
+
         }   
     }
     
